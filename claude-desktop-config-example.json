@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "utilix": {
+      "command": "npx",
+      "args": ["-y", "@utilix-tech/mcp"]
+    }
+  }
+}
