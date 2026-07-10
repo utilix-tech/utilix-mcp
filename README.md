@@ -1,6 +1,6 @@
 # @utilix-tech/mcp
 
-> MCP server exposing 111+ developer utility tools to Claude, Cursor, VS Code Copilot, and any MCP-compatible AI.
+> MCP server exposing 113+ developer utility tools to Claude, Cursor, VS Code Copilot, and any MCP-compatible AI.
 
 [![npm](https://img.shields.io/npm/v/@utilix-tech/mcp)](https://www.npmjs.com/package/@utilix-tech/mcp)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -11,7 +11,7 @@
 
 ## What is this?
 
-`@utilix-tech/mcp` is a [Model Context Protocol](https://modelcontextprotocol.io) server that gives Claude, Cursor, and other AI tools access to 111+ deterministic developer utilities — JSON formatting, encoding, hashing, text diff, regex, token estimation, PII detection, and much more — all running locally, no API key needed.
+`@utilix-tech/mcp` is a [Model Context Protocol](https://modelcontextprotocol.io) server that gives Claude, Cursor, and other AI tools access to 113+ deterministic developer utilities — JSON formatting, encoding, hashing, text diff, regex, token estimation, PII detection, and much more — all running locally, no API key needed.
 
 ---
 
