@@ -1,6 +1,6 @@
 # @utilix-tech/mcp
 
-> MCP server exposing 300+ developer utility tools to Claude, Cursor, VS Code Copilot, and any MCP-compatible AI.
+> MCP server exposing 321+ developer utility tools to Claude, Cursor, VS Code Copilot, and any MCP-compatible AI.
 
 [![npm](https://img.shields.io/npm/v/@utilix-tech/mcp)](https://www.npmjs.com/package/@utilix-tech/mcp)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -11,7 +11,7 @@
 
 ## What is this?
 
-`@utilix-tech/mcp` is a [Model Context Protocol](https://modelcontextprotocol.io) server that gives Claude, Cursor, and other AI tools access to 300+ deterministic developer utilities — JSON formatting, encoding, hashing, text diff, regex, token estimation, PII detection, and much more — all running locally, no API key needed.
+`@utilix-tech/mcp` is a [Model Context Protocol](https://modelcontextprotocol.io) server that gives Claude, Cursor, and other AI tools access to 300 deterministic developer utilities (JSON formatting, encoding, hashing, text diff, regex, token estimation, PII detection and much more) that run locally with no API key, plus 21 optional [AI tools](#ai-tools-optional-free-api-key) that run on Utilix's hosted AI with a free API key.
 
 ---
 
@@ -77,6 +77,32 @@ Add to `.vscode/mcp.json`:
   }
 }
 ```
+
+---
+
+## AI tools (optional, free API key)
+
+21 tools run on Utilix's hosted AI (Claude): `ai_generate_regex`, `ai_explain_regex`, `ai_generate_shell_command`, `ai_explain_shell_command`, `ai_explain_sql`, `ai_explain_error_message`, `ai_explain_stack_trace`, `ai_generate_commit_message`, `ai_generate_pr_description`, `ai_generate_docstring`, `ai_generate_test_cases`, `ai_generate_json_schema`, `ai_generate_cron`, `ai_explain_css`, `ai_generate_dockerfile`, `ai_explain_dockerfile`, `ai_explain_nginx_config`, `ai_explain_k8s_manifest`, `ai_explain_terraform`, `ai_explain_iam_policy` and `ai_generate_svg`.
+
+They need an API key from [utilix.tech/dashboard](https://www.utilix.tech/dashboard) (free to create). Pass it as the `UTILIX_API_KEY` environment variable:
+
+```json
+{
+  "mcpServers": {
+    "utilix": {
+      "command": "npx",
+      "args": ["-y", "@utilix-tech/mcp"],
+      "env": { "UTILIX_API_KEY": "utx_live_..." }
+    }
+  }
+}
+```
+
+With Claude Code: `claude mcp add utilix -e UTILIX_API_KEY=utx_live_... -- npx -y @utilix-tech/mcp`.
+
+- Usage counts toward your Utilix account's monthly AI limits, shared with the website: free accounts get 3 runs a month per AI tool, [Pro](https://www.utilix.tech/pricing) 20 to 50.
+- What you pass to an AI tool is sent to the Utilix API (and from there to Anthropic's API) to generate the answer. The key is only sent to `api.utilix.tech`.
+- Without a key, the AI tools reply with setup steps instead of failing. The 300 local tools never need a key.
 
 ---
 
