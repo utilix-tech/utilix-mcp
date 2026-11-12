@@ -82,14 +82,18 @@ Add to `.vscode/mcp.json`:
 
 ## Hosted server (no install)
 
-The same tools are served at **`https://mcp.utilix.tech`** (Streamable HTTP) for clients that take a URL. Send your API key from [utilix.tech/dashboard](https://www.utilix.tech/dashboard) as `Authorization: Bearer utx_live_...`. Each tool call counts toward your plan's daily request limit.
+The same tools are served at **`https://mcp.utilix.tech`** (Streamable HTTP). Each tool call counts toward your plan's daily request limit.
+
+- **Claude.ai and Claude Desktop**: Settings → Connectors → Add custom connector, enter `https://mcp.utilix.tech`, and sign in with your Utilix account (OAuth). No API key needed.
+
+Editors and CLIs send your API key from [utilix.tech/dashboard](https://www.utilix.tech/dashboard) as `Authorization: Bearer utx_live_...`:
 
 - **Cursor** (`~/.cursor/mcp.json`): `{ "mcpServers": { "utilix": { "url": "https://mcp.utilix.tech", "headers": { "Authorization": "Bearer utx_live_..." } } } }`
 - **VS Code** (`.vscode/mcp.json`): `{ "servers": { "utilix": { "type": "http", "url": "https://mcp.utilix.tech", "headers": { "Authorization": "Bearer utx_live_..." } } } }`
 - **Claude Code**: `claude mcp add --transport http utilix https://mcp.utilix.tech --header "Authorization: Bearer utx_live_..."`
 - **Codex** (`~/.codex/config.toml`): `[mcp_servers.utilix]` with `url = "https://mcp.utilix.tech"` and `bearer_token_env_var = "UTILIX_API_KEY"`
 
-Tool inputs are sent to Utilix to run (Utilix records which tool ran, not what you sent). If nothing should leave your machine, use the local `npx` setup above. Claude.ai, ChatGPT and Claude Desktop's connector settings need OAuth sign-in, which isn't supported yet, so use the local setup there.
+Tool inputs are sent to Utilix to run (Utilix records which tool ran, not what you sent). If nothing should leave your machine, use the local `npx` setup above.
 
 ---
 
