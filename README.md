@@ -80,6 +80,19 @@ Add to `.vscode/mcp.json`:
 
 ---
 
+## Hosted server (no install)
+
+The same tools are served at **`https://mcp.utilix.tech`** (Streamable HTTP) for clients that take a URL. Send your API key from [utilix.tech/dashboard](https://www.utilix.tech/dashboard) as `Authorization: Bearer utx_live_...`. Each tool call counts toward your plan's daily request limit.
+
+- **Cursor** (`~/.cursor/mcp.json`): `{ "mcpServers": { "utilix": { "url": "https://mcp.utilix.tech", "headers": { "Authorization": "Bearer utx_live_..." } } } }`
+- **VS Code** (`.vscode/mcp.json`): `{ "servers": { "utilix": { "type": "http", "url": "https://mcp.utilix.tech", "headers": { "Authorization": "Bearer utx_live_..." } } } }`
+- **Claude Code**: `claude mcp add --transport http utilix https://mcp.utilix.tech --header "Authorization: Bearer utx_live_..."`
+- **Codex** (`~/.codex/config.toml`): `[mcp_servers.utilix]` with `url = "https://mcp.utilix.tech"` and `bearer_token_env_var = "UTILIX_API_KEY"`
+
+Tool inputs are sent to Utilix to run (Utilix records which tool ran, not what you sent). If nothing should leave your machine, use the local `npx` setup above. Claude.ai, ChatGPT and Claude Desktop's connector settings need OAuth sign-in, which isn't supported yet, so use the local setup there.
+
+---
+
 ## AI tools (optional, free API key)
 
 21 tools run on Utilix's hosted AI (Claude): `ai_generate_regex`, `ai_explain_regex`, `ai_generate_shell_command`, `ai_explain_shell_command`, `ai_explain_sql`, `ai_explain_error_message`, `ai_explain_stack_trace`, `ai_generate_commit_message`, `ai_generate_pr_description`, `ai_generate_docstring`, `ai_generate_test_cases`, `ai_generate_json_schema`, `ai_generate_cron`, `ai_explain_css`, `ai_generate_dockerfile`, `ai_explain_dockerfile`, `ai_explain_nginx_config`, `ai_explain_k8s_manifest`, `ai_explain_terraform`, `ai_explain_iam_policy` and `ai_generate_svg`.
