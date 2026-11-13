@@ -1,6 +1,6 @@
 # @utilix-tech/mcp
 
-> MCP server exposing 322+ developer utility tools to Claude, Cursor, VS Code Copilot, and any MCP-compatible AI.
+> MCP server exposing 323+ developer utility tools to Claude, Cursor, VS Code Copilot, and any MCP-compatible AI.
 
 [![npm](https://img.shields.io/npm/v/@utilix-tech/mcp)](https://www.npmjs.com/package/@utilix-tech/mcp)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
