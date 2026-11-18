@@ -100,7 +100,7 @@ Tool inputs are sent to Utilix to run (Utilix records which tool ran, not what y
 
 ## AI tools (optional, free API key)
 
-21 tools run on Utilix's hosted AI (Claude): `ai_generate_regex`, `ai_explain_regex`, `ai_generate_shell_command`, `ai_explain_shell_command`, `ai_explain_sql`, `ai_explain_error_message`, `ai_explain_stack_trace`, `ai_generate_commit_message`, `ai_generate_pr_description`, `ai_generate_docstring`, `ai_generate_test_cases`, `ai_generate_json_schema`, `ai_generate_cron`, `ai_explain_css`, `ai_generate_dockerfile`, `ai_explain_dockerfile`, `ai_explain_nginx_config`, `ai_explain_k8s_manifest`, `ai_explain_terraform`, `ai_explain_iam_policy` and `ai_generate_svg`.
+22 tools run on Utilix's hosted AI (Claude): `ai_generate_regex`, `ai_generate_sql`, `ai_explain_regex`, `ai_generate_shell_command`, `ai_explain_shell_command`, `ai_explain_sql`, `ai_explain_error_message`, `ai_explain_stack_trace`, `ai_generate_commit_message`, `ai_generate_pr_description`, `ai_generate_docstring`, `ai_generate_test_cases`, `ai_generate_json_schema`, `ai_generate_cron`, `ai_explain_css`, `ai_generate_dockerfile`, `ai_explain_dockerfile`, `ai_explain_nginx_config`, `ai_explain_k8s_manifest`, `ai_explain_terraform`, `ai_explain_iam_policy` and `ai_generate_svg`.
 
 They need an API key from [utilix.tech/dashboard](https://www.utilix.tech/dashboard) (free to create). Pass it as the `UTILIX_API_KEY` environment variable:
 
